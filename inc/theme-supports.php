@@ -16,16 +16,6 @@ if( $theme_supports ) {
 
     add_theme_support( $theme_support, $value );
 
-    // if( $value === true ) {
-    //
-    //   add_theme_support( $theme_support );
-    //
-    // } elseif( $value !== false ) {
-    //
-    //   add_theme_support( $theme_support, $value );
-    //
-    // }
-
   }
 
 }

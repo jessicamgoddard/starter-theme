@@ -34,9 +34,11 @@ function starter_theme_config() {
     'theme-supports'    => [
       'responsive-embeds'           => true,
       'align-wide'                  => true,
+      'custom-units'                => true,
       'disable-custom-colors'       => true,
       'genesis-responsive-viewport' => true,
-      'html5'                       => [ 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style' ],
+      'genesis-custom-logo'         => true,
+      'html5'                       => [ 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style', 'navigation-widgets' ],
       'genesis-structural-wraps'    => [ 'header', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ],
       'genesis-accessibility'       => [ '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links', 'screen-reader-text' ],
       'genesis-menus'               => [
@@ -78,7 +80,7 @@ function starter_theme_config() {
     ],
     'remove-sidebars'             => [ 'sidebar', 'sidebar-alt', 'header-right', 'after-entry' ],
     'genesis-footer-widgets'      => 3,
-    'remove-layouts'              => [ 'conent-sidebar-sidebar', 'sidebar-content-sidebar', 'sidebar-sidebar-content', 'sidebar-content', 'content-sidebar' ],
+    'remove-layouts'              => [ 'content-sidebar-sidebar', 'sidebar-content-sidebar', 'sidebar-sidebar-content', 'sidebar-content', 'content-sidebar' ],
     'force-full-width'            => true,
   ];
 
