@@ -7,65 +7,23 @@
  * @since        1.0.0
 **/
 
+// Remove Genesis SEO settings from post/page editor
+remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
 
-// Registers the responsive menus
-if ( function_exists( 'genesis_register_responsive_menus' ) ) {
+// Remove Genesis SEO settings option page
+remove_theme_support( 'genesis-seo-settings-menu' );
 
-	genesis_register_responsive_menus( $starter_theme_config[ 'responsive-menus' ] );
+// Remove Genesis SEO settings from taxonomy editor
+remove_action( 'admin_init', 'genesis_add_taxonomy_seo_options' );
 
-}
-
-// Reduces secondary navigation to one level depth
-add_filter( 'wp_nav_menu_args', 'starter_theme_secondary_menu_args' );
-function starter_theme_secondary_menu_args( $args ) {
-
-  if( $starter_theme_config[ 'reduce-secondary-nav' ] === true && 'secondary' === $args['theme_location'] ) {
-
-  		$args['depth'] = 1;
-
-  }
-
-	return $args;
-
-}
+// Moves navigation menus
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_header', 'genesis_do_subnav' );
+add_action( 'genesis_header', 'genesis_do_nav' );
 
 // Wraps front page title in h1
 add_filter( 'genesis_site_title_wrap', function( $wrap ) { return is_front_page() ? 'h1' : $wrap; } );
-
-// Removes sidebars
-$sidebars = $starter_theme_config[ 'remove-sidebars' ];
-
-if( $sidebars !== null ) {
-
-  foreach( $sidebars as $sidebar ) {
-
-    unregister_sidebar( $sidebar );
-
-  }
-
-}
-
-// Removes page layouts
-$layouts = $starter_theme_config[ 'remove-layouts' ];
-
-if( $layouts !== null ) {
-
-  foreach( $layouts as $layout ) {
-
-    genesis_unregister_layout( $layout );
-
-  }
-
-}
-
-// Force full-width layout
-$force_full_width = $starter_theme_config[ 'force-full-width' ];
-
-if( $force_full_width === true ) {
-
-  add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
-}
 
 // Removes Genesis templates
 add_filter( 'theme_page_templates', 'starter_theme_remove_genesis_templates' );
@@ -75,5 +33,65 @@ function starter_theme_remove_genesis_templates( $page_templates ) {
 	unset( $page_templates['page_blog.php'] );
 
 	return $page_templates;
+
+}
+
+// Adds search to secondary navigation
+add_filter( 'wp_nav_menu_items', 'starter_themeadd_search_to_menu', 10, 2 );
+function starter_themeadd_search_to_menu( $menu, $args ) {
+
+  if( ( 'secondary' !== $args->theme_location ) )
+    return $menu;
+
+  ob_start();
+  get_search_form();
+  $search = ob_get_clean();
+  $menu .= '<li class="search-toggle"><span class="dashicons dashicons-search"></span></li>';
+  $menu .= '<li class="search">' . $search . '</li>';
+
+  return $menu;
+
+}
+
+// Adds hero image to page and posts
+add_action( 'genesis_entry_header', 'starter_themeadd_page_post_hero_image', 5 );
+function starter_themeadd_page_post_hero_image() {
+
+  if( ( is_page() || is_singular() ) && has_post_thumbnail() ) :
+    ?>
+    <div class="page-hero">
+      <div class="page-hero__image" style="background-image: url('<?= get_the_post_thumbnail_url() ?>')">
+
+        <?php if( get_field( 'headline' ) ) : ?>
+          <div class="page-hero__headline">
+            <p><?= get_field( 'headline' ) ?></p>
+          </div>
+        <?php endif; ?>
+
+        <?php if( is_singular() && get_the_category() ) :?>
+          <div class="page-hero__meta">
+            <?= starter_themecategories_with_colors() ?>
+          </div>
+        <?php endif; ?>
+
+        <?= get_the_post_thumbnail() ?>
+      </div>
+    </div>
+    <?php
+  endif;
+  if( is_page() || is_singular() ) :
+    ?>
+    <div class="wrap alignwide">
+    <?php
+  endif;
+
+}
+
+add_action( 'genesis_entry_header', 'starter_themeadd_header_wrap_close', 10 );
+function starter_themeadd_header_wrap_close() {
+
+  if( is_page() || is_singular() ) :
+    echo '</div>';
+  endif;
 
 }

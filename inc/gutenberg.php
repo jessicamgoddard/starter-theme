@@ -7,6 +7,16 @@
  * @since        1.0.0
 **/
 
+// Set editor stylesheet
+add_action( 'after_setup_theme', 'starter_theme_add_editor_styles' );
+function starter_theme_add_editor_styles() {
+
+  add_editor_style( '/assets/dist/editor.min.css' );
+
+}
+
+// Removes core block patterns
+remove_theme_support( 'core-block-patterns' );
 
 // Adds body classes to help with styling
 add_filter( 'body_class', 'starter_theme_blocks_body_classes' );
@@ -35,15 +45,3 @@ function starter_theme_blocks_body_classes( $classes ) {
 	return $classes;
 
 }
-
-// Unregisters default WP block patterns
-unregister_block_pattern( 'core/heading-paragraph' );
-unregister_block_pattern( 'core/large-header-button' );
-unregister_block_pattern( 'core/large-header' );
-unregister_block_pattern( 'core/quote' );
-unregister_block_pattern( 'core/text-three-columns-buttons' );
-unregister_block_pattern( 'core/text-two-columns-with-images' );
-unregister_block_pattern( 'core/text-two-columns' );
-unregister_block_pattern( 'core/three-buttons' );
-unregister_block_pattern( 'core/two-buttons' );
-unregister_block_pattern( 'core/two-images' );

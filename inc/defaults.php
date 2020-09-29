@@ -7,19 +7,6 @@
  * @since        1.0.0
 **/
 
-
-// Sets custom image sizes
-$image_sizes = $starter_theme_config[ 'image-sizes' ];
-if( $image_sizes ) {
-
-  foreach( $image_sizes as $image_size ) {
-
-    add_image_size( $image_size['name'], $image_size['width'], $image_size['height'], $image_size['crop'] );
-
-  }
-
-}
-
 // Forces blog to use archive template
 add_filter( 'template_include', 'starter_theme_template_heirarchy' );
 function starter_theme_template_heirarchy( $template ) {
