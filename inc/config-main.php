@@ -63,7 +63,7 @@ if( $starter_theme_config[ 'reduce-secondary-nav' ] === true ) {
 // Removes sidebars
 if( $starter_theme_config[ 'remove-sidebars' ] !== null ) {
 
-  foreach( $sidebars as $sidebar ) {
+  foreach( $starter_theme_config[ 'remove-sidebars' ] as $sidebar ) {
 
     unregister_sidebar( $sidebar );
 
@@ -74,7 +74,7 @@ if( $starter_theme_config[ 'remove-sidebars' ] !== null ) {
 // Removes page layouts
 if( $starter_theme_config[ 'remove-layouts' ] !== null ) {
 
-  foreach( $layouts as $layout ) {
+  foreach( $starter_theme_config[ 'remove-layouts' ] as $layout ) {
 
     genesis_unregister_layout( $layout );
 

@@ -12,7 +12,7 @@
 require_once get_template_directory() . '/lib/init.php';
 
 // Adds helper functions
-require_once get_template_directory() . '/inc/helper-functions.php';
+require_once get_stylesheet_directory() . '/inc/helper-functions.php';
 // Loads scripts and styles
 require_once get_stylesheet_directory() . '/inc/scripts-styles.php';
 // Adds programmatic inline CSS

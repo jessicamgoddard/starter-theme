@@ -13,7 +13,7 @@ $starter_theme_config = genesis_get_config( 'theme-supports' );
 // Sets theme supports based on config options
 if( $starter_theme_config[ 'theme-supports' ] ) {
 
-  foreach( $theme_supports as $theme_support => $value ) {
+  foreach( $starter_theme_config[ 'theme-supports' ] as $theme_support => $value ) {
 
     if( false === $value ) :
 
