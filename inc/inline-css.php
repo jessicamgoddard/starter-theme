@@ -11,11 +11,11 @@ add_action( 'enqueue_block_editor_assets', 'starter_theme_custom_gutenberg_css' 
 add_action( 'wp_enqueue_scripts', 'starter_theme_custom_gutenberg_css' );
 function starter_theme_custom_gutenberg_css() {
 
-  $starter_theme_config = genesis_get_config( 'main' );
+  $starter_theme_config = genesis_get_config( 'theme-supports' );
 
   $css = '';
-  $colors = $starter_theme_config[ 'theme-supports' ][ 'editor-color-palette' ];
-  $font_sizes = $starter_theme_config[ 'theme-supports' ][ 'editor-font-sizes' ];
+  $colors = $starter_theme_config[ 'editor-color-palette' ];
+  $font_sizes = $starter_theme_config[ 'editor-font-sizes' ];
 
   foreach( $colors as $color ) {
 
