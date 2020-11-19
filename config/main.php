@@ -29,7 +29,6 @@ return [
       'media_query_width' => '960px',
     ],
   ],
-  'custom-units'            => [ 'px', 'rem', 'em', 'vh', 'vw' ],
   'reduce-secondary-nav'    => true,
   'remove-sidebars'             => [ 'sidebar', 'sidebar-alt', 'header-right', 'after-entry' ],
   'genesis-footer-widgets'      => 3,

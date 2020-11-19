@@ -11,9 +11,9 @@
 $starter_theme_config = genesis_get_config( 'theme-supports' );
 
 // Sets theme supports based on config options
-if( $starter_theme_config[ 'theme-supports' ] ) {
+if( $starter_theme_config ) {
 
-  foreach( $starter_theme_config[ 'theme-supports' ] as $theme_support => $value ) {
+  foreach( $starter_theme_config as $theme_support => $value ) {
 
     if( false === $value ) :
 
@@ -34,6 +34,6 @@ if( $starter_theme_config[ 'custom-units' ] ) :
 
   $units = implode( ', ', $starter_theme_config[ 'custom-units' ] );
 
-  add_theme_support( 'custom-units', $units );
+  add_theme_support( 'custom-units', $starter_theme_config[ 'custom-units' ] );
 
 endif;

@@ -11,6 +11,7 @@ return [
   'responsive-embeds'           => true,
   'align-wide'                  => true,
   'custom-line-height'          => false,
+  'custom-units'                => [ 'px', 'rem', 'em', 'vh', 'vw' ],
   'disable-custom-colors'       => true,
   'genesis-responsive-viewport' => true,
   'genesis-custom-logo'         => true,

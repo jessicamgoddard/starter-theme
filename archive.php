@@ -19,13 +19,13 @@ function starter_theme_blog_archive_body_class( $classes ) {
 }
 
 // Adds div around articles
-add_action( 'genesis_before_while', 'kyosa_articles_div_start' );
-function kyosa_articles_div_start() {
+add_action( 'genesis_before_while', 'starter_theme_articles_div_start' );
+function starter_theme_articles_div_start() {
 	echo '<div class="articles">';
 }
 
-add_action( 'genesis_after_endwhile', 'kyosa_articles_div_end', 5 );
-function kyosa_articles_div_end() {
+add_action( 'genesis_after_endwhile', 'starter_theme_articles_div_end', 5 );
+function starter_theme_articles_div_end() {
 	echo '</div>';
 }
 

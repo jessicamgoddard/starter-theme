@@ -90,8 +90,8 @@ if( $starter_theme_config[ 'force-full-width' ] === true ) {
 }
 
 // Adds footer widgets
-// if( $starter_theme_config[ 'genesis-footer-widgets' ] != 0 ) :
-//
-//   add_theme_support( 'genesis-footer-widgets', $footer_widgets );
-//
-// endif;
+if( $starter_theme_config[ 'genesis-footer-widgets' ] != 0 ) :
+
+  add_theme_support( 'genesis-footer-widgets', $starter_theme_config[ 'genesis-footer-widgets' ] );
+
+endif;
