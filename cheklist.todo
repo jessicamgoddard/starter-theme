@@ -2,16 +2,16 @@ Preparation:
   ☐ Setup existing site on Google Analytics
   ☐ Setup existing site on Google Search Console
   ☐ Submit existing sitemap to Google Search Console
-  ☐ Get list of blog categories
-  ☐ Get default blog category
   ☐ Get access to existing site
-  ☐ Get clarification on existing plugins
+  ☐ Get list of blog categories and default blog category
   ☐ Get details for forms
   ☐ Get login for email marketing system
+  ☐ Technical discovery
+      ☐ Get clarification on existing plugins
+      ☐ Get list of pages being removed (redirection spreadsheet)
 
 Planning:
-  ☐ Content to migrate
-  ☐ Redirection spreadsheet
+  ☐ Custom post types
   ☐ Custom block styles
   ☐ Default block extensions
   ☐ Custom block patterns
@@ -19,40 +19,28 @@ Planning:
   ☐ Image sizes
   ☐ ACF usage
   ☐ Menu names and locations
-  ☐ Editor font sizes
-  ☐ Editor color palette
   ☐ Widget areas
   ☐ Page layouts
-  ☐ Blog categories
-  ☐ Default blog category
-  ☐ Email marketing system
 
 Local Setup:
   ☐ Create new site on Local using Blueprint
   ☐ Activate default plugins
       ☐ Auto Image Attributes from Filename with Bulk Updater
       ☐ Genesis Visual Hook Guide
-      ☐ Rebusted
       ☐ Regenerate Thumbnails
       ☐ Safe SVG
       ☐ WordPress Importer
+  ☐ Migrate content from existing site
 
 Theme Setup:
   ☐ Copy starter theme
   ☐ Find/replace theme name
-  ☐ Modify inc/config.php
+  ☐ Modify config files
   ☐ Install and activate Genesis framework
   ☐ Install and activate child theme
-  ☐ Import test data
   ☐ Add logo
   ☐ Add favicon
   ☐ Set comment preferences
-
-SiteGround Setup:
-  ☐ Create sub-domain
-  ☐ Add SSL certificate
-  ☐ Install WordPress
-  ☐ Disable caching
 
 WordPress Setup:
   ☐ Set blog title and tagline
@@ -64,7 +52,6 @@ WordPress Setup:
   ☐ Select default blog category
   ☐ Create primary pages
   ☐ Create menu(s)
-  ☐ Import existing content, plugins, and data
 
 Basic Theme Development:
   ☐ Create custom post types and taxonomies
@@ -106,14 +93,13 @@ Block Development:
   ☐ Add styling (front-end and editor) for custom blocks
   ☐ Fix any items marked in the code
 
-Site Build-out:
+Dev Build-out:
   ☐ Create all mock-up pages using blocks
   ☐ Modify styling as needed
-  ☐ Add content from client
   ☐ Activate standard plugins
       ☐ Antispam Bee
       ☐ Cookie Notice for GDPR & CCPA
-      ☐ Indicate External Links
+      ☐ External Links
       ☐ PrintFriendly
       ☐ Redirection
       ☐ Smush
@@ -141,6 +127,12 @@ QA:
   ☐ Pagination
   ☐ Breadcrumbs
 
+SiteGround Setup:
+  ☐ Create sub-domain
+  ☐ Add SSL certificate
+  ☐ Install WordPress
+  ☐ Disable caching
+
 Testing:
   ☐ Accessibility
       ☐ WAVE Accessibility Tester
@@ -157,12 +149,12 @@ Testing:
   ☐ Android/Chrome
   ☐ Revise and re-test
 
-Review:
+Review and Build-out:
   ☐ Install WP Feedback
+  ☐ Add content from client
   ☐ Revise as necessary
 
 Launch Prep:
-  ☐ Add final content
   ☐ Change theme screenshot
   ☐ Transfer site to Flywheel
   ☐ Accessibility testing (P&P Checklist - Final Launch Check)

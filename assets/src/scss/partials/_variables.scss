@@ -1,0 +1,21 @@
+// Font Sizes
+$font-size: 100%;
+$ratio: 1.333; /* Perfect Fourth */
+
+$font-size-h6: $font-size * $ratio;
+$font-size-h5: $font-size-h6 * $ratio;
+$font-size-h4: $font-size-h5 * $ratio;
+$font-size-h3: $font-size-h4 * $ratio;
+$font-size-h2: $font-size-h3 * $ratio;
+$font-size-h1: $font-size-h2 * $ratio;
+
+// Colors
+$color-black: #000;
+
+// Widths
+$width-standard: 58.125rem; // 900px + 30px padding
+$width-wide: 80.625rem; // 930px + 360px negative margin
+
+// Breakpoints
+$breakpoint-standard: 60em; // 960px
+$breakpoint-wide: 80.625em;
